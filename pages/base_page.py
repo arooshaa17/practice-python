@@ -15,7 +15,6 @@ class BasePage:
         """
         Is browser on page
         """
-        time.sleep(1)
         return selector in self.driver.title
 
     def wait_for_ajax(self):
@@ -29,7 +28,7 @@ class BasePage:
         """
         Wait for element
         """
-        WebDriverWait(self.driver, 50
+        WebDriverWait(self.driver, 30
                       ).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, wait_selector))
         )
